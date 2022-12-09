@@ -21,6 +21,7 @@ class MenueViewController: UIViewController {
         super.viewDidLoad()
 //        check.insets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         
+       
         
         lengthButton.layer.cornerRadius = 10
         volumeButton.layer.cornerRadius = 10

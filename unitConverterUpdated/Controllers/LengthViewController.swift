@@ -24,6 +24,12 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //change the back button colour and button text
+        //self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        
+        
         inputTextField.delegate = self
         measurePicker.delegate = self
         measurePicker.dataSource = self
