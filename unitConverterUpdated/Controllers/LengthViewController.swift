@@ -123,13 +123,13 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         
         print("+++++++++++",inputTextField.text)
         
-        //why
+        //whyll
         guard let text = inputTextField.text,
               !text.isEmpty else{
             return
         }
         
-        //##Double why
+        //##Double whylle
         guard let value = Double(text) else{
             return
         }
