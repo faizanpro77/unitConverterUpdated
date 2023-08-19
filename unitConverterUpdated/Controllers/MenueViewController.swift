@@ -57,8 +57,20 @@ class MenueViewController: UIViewController {
       let Temprature =  self.storyboard?.instantiateViewController(withIdentifier: "TempratureViewController") as! TempratureViewController
         self.navigationController?.pushViewController(Temprature, animated: true)
     }
-
-    
-
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
