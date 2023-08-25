@@ -37,7 +37,7 @@ class TempratureViewController: UIViewController, UITextFieldDelegate, UIPickerV
         inputTextField.becomeFirstResponder()
         
         outputLabelTextField.layer.borderWidth = 1
-        outputLabelTextField.layer.borderColor = UIColor.lightGray.cgColor
+        outputLabelTextField.layer.borderColor = UIColor.black.cgColor
         outputLabelTextField.text = "--"
         
         firstPicker = lengthArray1[measurePicker.selectedRow(inComponent: 0)]

@@ -35,7 +35,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         measurePicker.dataSource = self
         
         //text field properties
-        inputTextField.placeholder = "good boy"
+        inputTextField.placeholder = "Enter Value"
         
         //        inputTextField.returnKeyType = .done
         //        inputTextField.autocapitalizationType = .words
@@ -45,7 +45,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         inputTextField.becomeFirstResponder()
         
         outputLabelTextField.layer.borderWidth = 1
-        outputLabelTextField.layer.borderColor = UIColor.lightGray.cgColor
+        outputLabelTextField.layer.borderColor = UIColor.black.cgColor
         outputLabelTextField.text = "--"
         
         firstPicker = lengthArray1[measurePicker.selectedRow(inComponent: 0)]
