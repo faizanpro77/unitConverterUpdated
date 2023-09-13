@@ -12,8 +12,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     let lengthArray1 = ["inch", "feet", "yard"]
     let lenghthArray2 = ["inch", "feet", "yard"]
     
-    
-    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputLabelTextField: UILabel!
     @IBOutlet weak var measurePicker: UIPickerView!
@@ -24,11 +22,8 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //change the back button colour and button text
         //self.navigationController?.navigationBar.tintColor = UIColor.white
-        
-        
         
         inputTextField.delegate = self
         measurePicker.delegate = self
@@ -40,7 +35,8 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         //        inputTextField.returnKeyType = .done
         //        inputTextField.autocapitalizationType = .words
         //        inputTextField.autocorrectionType = .no
-        //
+        
+        
         //after open screen keyboard open automatically without clicking on textFeild
         inputTextField.becomeFirstResponder()
         
@@ -51,7 +47,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         firstPicker = lengthArray1[measurePicker.selectedRow(inComponent: 0)]
         secondPicker = lenghthArray2[measurePicker.selectedRow(inComponent: 0)]
         
-        print("========> \(inputTextField.text!)")
+        //        print("========> \(inputTextField.text!)")
         
         
     }
@@ -73,13 +69,8 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     //this function called when we pressed return or done button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         inputTextField.resignFirstResponder()
-        
-        //##doubt it going insid if with empty text
-        //        if let check = textField.text {
-        //        print("lllllll-=============\(check)")
-        //        }
-        
         return true
     }
     
@@ -121,9 +112,8 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     func calculateLenght(firstPicker:String, secondPicker:String) {
         
-        print("+++++++++++",inputTextField.text)
+        //        print("+++++++++++",inputTextField.text)
         
-        //whyll
         guard let text = inputTextField.text,
               !text.isEmpty else{
             return
@@ -135,7 +125,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         }
         
         //"inch", "feet", "yard"
-        print("=============>",text)
+        //        print("=============>",text)
         var result:Double = 0
         
         if firstPicker == "inch" && secondPicker == "inch" {
@@ -169,36 +159,5 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
             result = value
             outputLabelTextField.text = (" \(String(result)) yd")
         }
-        
-        
-        
     }
-    
-    //==========================================================================================================
-    //==========================================================================================================
-    //## all learning is here
-    
-    //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    //        let check = inputTextField.text
-    // after type any charater we can get it and add it
-    //        print("\(check!)========> \(check! + string)=====\(string)")
-    //        return true
-    //
-    //    }
-    
-    //    @IBAction func checkInputText(_ sender: UIButton) {
-    //
-    //                let check = inputTextField.text
-    //                print("========> \(check!)")
-    //
-    //        inputTextField.resignFirstResponder()
-    //
-    //    }
-    
-    
-    //==========================================================================================================
-    //==========================================================================================================
-    
-    
-    
 }
