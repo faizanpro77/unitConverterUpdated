@@ -3,18 +3,17 @@
 //  unitConverterUpdated
 //
 //  Created by MD Faizan on 02/12/22.
-//
 
 import UIKit
 
 class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let lengthArray1 = ["inch", "feet", "yard"]
-    let lenghthArray2 = ["inch", "feet", "yard"]
-    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputLabelTextField: UILabel!
     @IBOutlet weak var measurePicker: UIPickerView!
+    
+    let lengthArray1 = ["inch", "feet", "yard"]
+    let lenghthArray2 = ["inch", "feet", "yard"]
     
     var firstPicker:String?
     var secondPicker:String?
@@ -36,7 +35,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         //        inputTextField.autocapitalizationType = .words
         //        inputTextField.autocorrectionType = .no
         
-        
         //after open screen keyboard open automatically without clicking on textFeild
         inputTextField.becomeFirstResponder()
         
@@ -48,8 +46,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         secondPicker = lenghthArray2[measurePicker.selectedRow(inComponent: 0)]
         
         //        print("========> \(inputTextField.text!)")
-        
-        
     }
     
     //its called when we press any character key
@@ -65,7 +61,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         print("textFieldDidChangeSelection-----")
         calculateLenght(firstPicker: firstPicker!, secondPicker: secondPicker!)
     }
-    
     
     //this function called when we pressed return or done button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -86,8 +81,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         }
     }
     
-    
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
             return lengthArray1[row]
@@ -107,8 +100,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         calculateLenght(firstPicker: firstPicker!, secondPicker: secondPicker!)
         
     }
-    
-    
     
     func calculateLenght(firstPicker:String, secondPicker:String) {
         

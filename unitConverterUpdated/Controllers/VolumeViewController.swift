@@ -3,20 +3,17 @@
 //  unitConverterUpdated
 //
 //  Created by MD Faizan on 02/12/22.
-//
 
 import UIKit
 
 class VolumeViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    let lengthArray1 = ["Litres", "Millilitres", "Gallon"]
-    let lenghthArray2 = ["Litres", "Millilitres", "Gallon"]
-    
-    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputLabelTextField: UILabel!
     @IBOutlet weak var measurePicker: UIPickerView!
+    
+    let lengthArray1 = ["Litres", "Millilitres", "Gallon"]
+    let lenghthArray2 = ["Litres", "Millilitres", "Gallon"]
     
     var firstPicker:String?
     var secondPicker:String?
@@ -31,7 +28,6 @@ class VolumeViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         //text field properties
         inputTextField.placeholder = "Enter Value"
         
-        
         //after open screen keyboard open automatically without clicking on textFeild
         inputTextField.becomeFirstResponder()
         
@@ -43,8 +39,6 @@ class VolumeViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         secondPicker = lenghthArray2[measurePicker.selectedRow(inComponent: 0)]
         
         print("========> \(inputTextField.text!)")
-        
-        
     }
     
     //its called when we press any character key
@@ -60,7 +54,6 @@ class VolumeViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         print("textFieldDidChangeSelection-----")
         calculateLenght(firstPicker: firstPicker!, secondPicker: secondPicker!)
     }
-    
     
     //this function called when we pressed return or done button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -79,8 +72,6 @@ class VolumeViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
             return lenghthArray2.count
         }
     }
-    
-    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
@@ -101,8 +92,6 @@ class VolumeViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         calculateLenght(firstPicker: firstPicker!, secondPicker: secondPicker!)
         
     }
-    
-    
     
     func calculateLenght(firstPicker:String, secondPicker:String) {
         
@@ -156,19 +145,4 @@ class VolumeViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

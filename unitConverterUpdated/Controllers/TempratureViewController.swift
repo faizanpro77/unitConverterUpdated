@@ -3,21 +3,17 @@
 //  unitConverterUpdated
 //
 //  Created by MD Faizan on 02/12/22.
-//
 
 import UIKit
 
 class TempratureViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    
-    let lengthArray1 = ["Celsius", "Fahrenheit", "Kelvin"]
-    let lenghthArray2 = ["Celsius", "Fahrenheit", "Kelvin"]
-    
-    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputLabelTextField: UILabel!
     @IBOutlet weak var measurePicker: UIPickerView!
+    
+    let lengthArray1 = ["Celsius", "Fahrenheit", "Kelvin"]
+    let lenghthArray2 = ["Celsius", "Fahrenheit", "Kelvin"]
     
     var firstPicker:String?
     var secondPicker:String?
@@ -32,7 +28,6 @@ class TempratureViewController: UIViewController, UITextFieldDelegate, UIPickerV
         //text field properties
         inputTextField.placeholder = "Enter Value"
         
-        
         //after open screen keyboard open automatically without clicking on textFeild
         inputTextField.becomeFirstResponder()
         
@@ -44,8 +39,6 @@ class TempratureViewController: UIViewController, UITextFieldDelegate, UIPickerV
         secondPicker = lenghthArray2[measurePicker.selectedRow(inComponent: 0)]
         
         print("========> \(inputTextField.text!)")
-        
-        
     }
     
     //its called when we press any character key
@@ -61,7 +54,6 @@ class TempratureViewController: UIViewController, UITextFieldDelegate, UIPickerV
         print("textFieldDidChangeSelection-----")
         calculateLenght(firstPicker: firstPicker!, secondPicker: secondPicker!)
     }
-    
     
     //this function called when we pressed return or done button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -81,8 +73,6 @@ class TempratureViewController: UIViewController, UITextFieldDelegate, UIPickerV
         }
     }
     
-    
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
             return lengthArray1[row]
@@ -100,16 +90,12 @@ class TempratureViewController: UIViewController, UITextFieldDelegate, UIPickerV
             print("secondPicker=======", secondPicker!)
         }
         calculateLenght(firstPicker: firstPicker!, secondPicker: secondPicker!)
-        
     }
-    
-    
     
     func calculateLenght(firstPicker:String, secondPicker:String) {
         
         print("+++++++++++",inputTextField.text!)
         
-        //why
         guard let text = inputTextField.text,
               !text.isEmpty else{
             return
