@@ -37,18 +37,3 @@ class MenueViewController: UIViewController {
         self.navigationController?.pushViewController(Temprature, animated: true)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
